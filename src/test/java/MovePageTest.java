@@ -7,10 +7,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertEquals;
 
-
-//Это класс переходов на различные страницы,
-// должно быть 6 проверок(переход на Булки, Соусы, Начинки, по лого, на Конструктор, в ЛК)
-
 public class MovePageTest {
 
     @DisplayName("Переход на вкладку Соусы")
@@ -48,8 +44,8 @@ public class MovePageTest {
         MainPage mainPage = page(MainPage.class);
         mainPage.click_personal_account_button();
         LoginPage loginPage = page(LoginPage.class);
-        String textRegister = loginPage.getTextRegisterButton();
-        assertEquals(textRegister, "Зарегистрироваться");
+        String textRegister = loginPage.getEntryText();
+        assertEquals(textRegister, "Вход");
     }
 
     @DisplayName("Переход на вкладку Конструктор")

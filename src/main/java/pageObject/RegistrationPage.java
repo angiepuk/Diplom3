@@ -1,5 +1,4 @@
 package pageObject;
-
 import com.codeborne.selenide.SelenideElement;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.support.FindBy;
@@ -42,55 +41,51 @@ public class RegistrationPage {
     public void click_inactive_input_password(){
         inactivePasswordInput.click();
     }
-
-    public void click_register_button2(){
-        registerButton2.click();
-    }
-
     public void setName(String name){
         activeNameInput.setValue(name);
-        }
-
+    }
     public void setEmail(String email){
         activeEmailInput.setValue(email);
     }
-
     public void setPassword(String password){
         activePasswordInput.setValue(password);
+    }
+    public void click_register_button2(){
+        registerButton2.click();
+    }
+    public void click_logIn_button_registration_page() {
+        logIn_button_registration_page.click();
     }
 
     public String getTextIncorrectPassword(){
         return incorrectPasswordText.getText();
     }
 
-    //Инпут Неактивного Имени
     @FindBy(how = How.XPATH, using = "//label[@class='input__placeholder text noselect text_type_main-default'][text()='Имя']")
     private static SelenideElement inactiveNameInput;
 
-    //Инпут активного Имени
     @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/main/div/form/fieldset[1]/div/div/input")
     private static SelenideElement activeNameInput;
 
-    //Инпут Неактивного email
     @FindBy(how = How.XPATH, using = "//label[@class='input__placeholder text noselect text_type_main-default'][text()='Email']")
     private static SelenideElement inactiveEmailInput;
 
-    //Инпут активного email
     @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/main/div/form/fieldset[2]/div/div/input")
     private static SelenideElement activeEmailInput;
 
-    //Инпут Неактивного Пароля
     @FindBy(how = How.XPATH, using = "//label[@class='input__placeholder text noselect text_type_main-default'][text()='Пароль']")
     private static SelenideElement inactivePasswordInput;
 
-    //Инпут активного Пароля
     @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/main/div/form/fieldset[3]/div/div/input")
     private static SelenideElement activePasswordInput;
 
-    //кнопка Зарегистрироваться
     @FindBy(how = How.XPATH, using = "//button[contains(@class, 'button_button__33qZ0')][text()='Зарегистрироваться']")
     private static SelenideElement registerButton2;
 
+    @FindBy(how = How.XPATH, using = "//a[@class='Auth_link__1fOlj'][text()='Войти']")
+    private static SelenideElement logIn_button_registration_page;
+
     @FindBy(how = How.XPATH, using = "//p[@class='input__error text_type_main-default'][text()='Некорректный пароль']")
     private static SelenideElement incorrectPasswordText;
+
 }
