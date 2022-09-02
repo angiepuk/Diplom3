@@ -66,7 +66,7 @@ public class AuthorizationTest {
         loginPage.setPassword(password);
         loginPage.clickLogInButton();
         String placeOrderText = mainPage.getTextPlaceOrder();
-        assertEquals(placeOrderText, "Оформить заказ");
+        assertEquals("Оформить заказ", placeOrderText);
     }
 
     @DisplayName("Авторизация по кнопке «Личный кабинет» на главной")
@@ -82,7 +82,7 @@ public class AuthorizationTest {
         loginPage.setPassword(password);
         loginPage.clickLogInButton();
         String placeOrderText = mainPage.getTextPlaceOrder();
-        assertEquals(placeOrderText, "Оформить заказ");
+        assertEquals("Оформить заказ", placeOrderText);
     }
 
     @DisplayName("Авторизация через кнопку в форме регистрации")
@@ -101,7 +101,7 @@ public class AuthorizationTest {
         loginPage.setPassword(password);
         loginPage.clickLogInButton();
         String placeOrderText = mainPage.getTextPlaceOrder();
-        assertEquals(placeOrderText, "Оформить заказ");
+        assertEquals("Оформить заказ", placeOrderText);
     }
 
     @DisplayName("Авторизация через кнопку в форме восстановления пароля")
@@ -120,6 +120,6 @@ public class AuthorizationTest {
         loginPage.setPassword(password);
         loginPage.clickLogInButton();
         String placeOrderText = mainPage.getTextPlaceOrder();
-        assertEquals(placeOrderText, "Оформить заказ");
+        assertEquals("Оформить заказ", placeOrderText);
     }
 }

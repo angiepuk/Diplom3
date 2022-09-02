@@ -15,7 +15,7 @@ public class MovePageTest {
         MainPage mainPage = open("https://stellarburgers.nomoreparties.site", MainPage.class);
         mainPage.clickSauceButton();
         String textSauce = mainPage.getTextSauce();
-        assertEquals(textSauce, "Соусы");
+        assertEquals("Соусы", textSauce);
     }
 
     @DisplayName("Переход на вкладку Начинки")
@@ -24,7 +24,7 @@ public class MovePageTest {
         MainPage mainPage = open("https://stellarburgers.nomoreparties.site", MainPage.class);
         mainPage.clickFillingButton();
         String textFilling = mainPage.getTextFilling();
-        assertEquals(textFilling, "Начинки");
+        assertEquals("Начинки", textFilling);
     }
 
     @DisplayName("Переход на вкладку Булки")
@@ -34,7 +34,7 @@ public class MovePageTest {
         mainPage.clickFillingButton();
         mainPage.clickBulkiButton();
         String textBulki = mainPage.getTextBulki();
-        assertEquals(textBulki, "Булки");
+        assertEquals("Булки", textBulki);
     }
 
     @DisplayName("Переход на вкладку Личный Кабинет")
@@ -45,7 +45,7 @@ public class MovePageTest {
         mainPage.clickPersonalAccountButton();
         LoginPage loginPage = page(LoginPage.class);
         String textRegister = loginPage.getEntryText();
-        assertEquals(textRegister, "Вход");
+        assertEquals("Вход", textRegister);
     }
 
     @DisplayName("Переход на вкладку Конструктор")

@@ -45,7 +45,7 @@ public class RegistrationTest {
         registrationPage.setPassword(password);
         registrationPage.clickRegisterButton2();
         String textRegister = loginPage.getEntryText();
-        assertEquals(textRegister, "Вход");
+        assertEquals("Вход", textRegister);
 
         RegistrationPage creds = new RegistrationPage(email, password, name);
 
@@ -82,6 +82,6 @@ public class RegistrationTest {
         registrationPage.setPassword(password);
         registrationPage.clickRegisterButton2();
         String textIncorrectPassword = registrationPage.getTextIncorrectPassword();
-        assertEquals(textIncorrectPassword, "Некорректный пароль");
+        assertEquals("Некорректный пароль", textIncorrectPassword);
     }
 }

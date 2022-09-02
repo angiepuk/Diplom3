@@ -70,6 +70,6 @@ public class LogOutTest {
         AccountPage accountPage = page(AccountPage.class);
         accountPage.clickLogOutButton();
         String textRegister = loginPage.getEntryText();
-        assertEquals(textRegister, "Вход");
+        assertEquals("Вход", textRegister);
     }
 }
