@@ -10,6 +10,33 @@ public class RegistrationPage {
     String email;
     String password;
 
+    @FindBy(how = How.XPATH, using = "//label[@class='input__placeholder text noselect text_type_main-default'][text()='Имя']")
+    private static SelenideElement inactiveNameInput;
+
+    @FindBy(how = How.XPATH, using = "//input[contains(@class, 'text input__textfield')][@name = 'name']")
+    private static SelenideElement activeNameInput;
+
+    @FindBy(how = How.XPATH, using = "//label[@class='input__placeholder text noselect text_type_main-default'][text()='Email']")
+    private static SelenideElement inactiveEmailInput;
+
+    @FindBy(how = How.XPATH, using = "//input[contains(@class, 'text input__textfield')][@name = 'name']")
+    private static SelenideElement activeEmailInput;
+
+    @FindBy(how = How.XPATH, using = "//label[@class='input__placeholder text noselect text_type_main-default'][text()='Пароль']")
+    private static SelenideElement inactivePasswordInput;
+
+    @FindBy(how = How.XPATH, using = "//input[contains(@class, 'text input__textfield')][@name = 'Пароль']")
+    private static SelenideElement activePasswordInput;
+
+    @FindBy(how = How.XPATH, using = "//button[contains(@class, 'button_button__33qZ0')][text()='Зарегистрироваться']")
+    private static SelenideElement registerButton2;
+
+    @FindBy(how = How.XPATH, using = "//a[@class='Auth_link__1fOlj'][text()='Войти']")
+    private static SelenideElement logIn_button_registration_page;
+
+    @FindBy(how = How.XPATH, using = "//p[@class='input__error text_type_main-default'][text()='Некорректный пароль']")
+    private static SelenideElement incorrectPasswordText;
+
     public RegistrationPage() {
     }
 
@@ -60,32 +87,4 @@ public class RegistrationPage {
     public String getTextIncorrectPassword(){
         return incorrectPasswordText.getText();
     }
-
-    @FindBy(how = How.XPATH, using = "//label[@class='input__placeholder text noselect text_type_main-default'][text()='Имя']")
-    private static SelenideElement inactiveNameInput;
-
-    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/main/div/form/fieldset[1]/div/div/input")
-    private static SelenideElement activeNameInput;
-
-    @FindBy(how = How.XPATH, using = "//label[@class='input__placeholder text noselect text_type_main-default'][text()='Email']")
-    private static SelenideElement inactiveEmailInput;
-
-    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/main/div/form/fieldset[2]/div/div/input")
-    private static SelenideElement activeEmailInput;
-
-    @FindBy(how = How.XPATH, using = "//label[@class='input__placeholder text noselect text_type_main-default'][text()='Пароль']")
-    private static SelenideElement inactivePasswordInput;
-
-    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/main/div/form/fieldset[3]/div/div/input")
-    private static SelenideElement activePasswordInput;
-
-    @FindBy(how = How.XPATH, using = "//button[contains(@class, 'button_button__33qZ0')][text()='Зарегистрироваться']")
-    private static SelenideElement registerButton2;
-
-    @FindBy(how = How.XPATH, using = "//a[@class='Auth_link__1fOlj'][text()='Войти']")
-    private static SelenideElement logIn_button_registration_page;
-
-    @FindBy(how = How.XPATH, using = "//p[@class='input__error text_type_main-default'][text()='Некорректный пароль']")
-    private static SelenideElement incorrectPasswordText;
-
 }
