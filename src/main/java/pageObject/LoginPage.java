@@ -1,5 +1,6 @@
 package pageObject;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -28,31 +29,35 @@ public class LoginPage {
     @FindBy(how = How.XPATH, using = "//a[@class='Auth_link__1fOlj'][text()='Восстановить пароль']")
     private static SelenideElement recoverPasswordButton;
 
+    @Step("Проверка присутствия заголовка <Вход> на странице")
     public String getEntryText(){
         return entry_text.getText();
     }
-
+    @Step("Клик поля <Email>")
     public void click_inactive_input_email(){
         inactiveEmailInput.click();
     }
+    @Step("Заполнение данных в поле <Email>")
     public void setEmail(String email){
         activeEmailInput.setValue(email);
     }
-
+    @Step("Клик поля <Пароль>")
     public void click_inactive_input_password(){
         inactivePasswordInput.click();
     }
+    @Step("Заполнение данных в поле <Пароль>")
     public void setPassword(String password){
         activePasswordInput.setValue(password);
     }
+    @Step("Клик кнопки <Войти>")
     public void click_logIn_button() {
         logIn_button.click();
     }
-
+    @Step("Клик кнопки <Зарегистрироваться>")
     public void click_register_button(){
         registerButton.click();
     }
-
+    @Step("Клик кнопки <Восстановить пароль>")
     public void click_recover_password(){
         recoverPasswordButton.click();
     }

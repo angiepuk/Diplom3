@@ -1,5 +1,6 @@
 package pageObject;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.*;
 public class MainPage {
 
@@ -39,49 +40,63 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//button[contains(@class, 'button_button__33qZ0')][text()='Оформить заказ']")
     private static SelenideElement placeOrderButton;
 
+    @Step("Клик кнопки <Конструктор>")
     public void click_constructor_button() {
         constructorButton.click();
     }
 
+    @Step("Клик кнопки <Личный Кабинет>")
     public void click_personal_account_button() {
         personalAccountButton.click();
     }
 
+    @Step("Клик кнопки <Войти в аккаунт>")
     public void click_signIn_mainPage_button() {
         signInMainPageButton.click();
     }
 
+    @Step("Клик лого <Stellar burgers>")
     public void click_logo() {
         logoStellarBurger.click();
     }
 
+    @Step("Клик кнопки <Булки>")
     public void click_bulki_button() {
         bulkiButton.click();
     }
 
+    @Step("Проверка присутствия заголовка <Булки> на странице")
     public String getTextBulki(){
         return bulkiText.getText();
     }
 
+    @Step("Клик кнопки <Соусы>")
     public void click_sauce_button() {
         sauceButton.click();
     }
 
+    @Step("Проверка присутствия заголовка <Соусы> на странице")
     public String getTextSauce(){
         return sauceText.getText();
     }
 
+    @Step("Клик кнопки <Начинки>")
     public void click_filling_button() {
         fillingButton.click();
     }
 
+    @Step("Проверка присутствия заголовка <Начинки> на странице")
     public String getTextFilling(){
         return fillingText.getText();
     }
 
+    @Step("Проверка присутствия заголовка <Соберите бургер> на странице")
+
     public String getTextRaiseBurger(){
         return raiseBurgerText.getText();
     }
+
+    @Step("Проверка присутствия кнопки <Оформить заказ> на странице")
     public String getTextPlaceOrder() {
         return placeOrderButton.getText();
     }
