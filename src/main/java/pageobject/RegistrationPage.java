@@ -1,4 +1,4 @@
-package pageObject;
+package pageobject;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -33,7 +33,7 @@ public class RegistrationPage {
     private static SelenideElement registerButton2;
 
     @FindBy(how = How.XPATH, using = "//a[@class='Auth_link__1fOlj'][text()='Войти']")
-    private static SelenideElement logIn_button_registration_page;
+    private static SelenideElement logInButtonRegistrationPage;
 
     @FindBy(how = How.XPATH, using = "//p[@class='input__error text_type_main-default'][text()='Некорректный пароль']")
     private static SelenideElement incorrectPasswordText;
@@ -59,17 +59,17 @@ public class RegistrationPage {
     }
 
     @Step("Клик неактивного поля <Имя>")
-    public void click_inactive_input_name(){
+    public void clickInactiveInputName(){
         inactiveNameInput.click();
     }
 
     @Step("Клик неактивного поля <Email>")
-    public void click_inactive_input_email(){
+    public void clickInactiveInputEmail(){
         inactiveEmailInput.click();
     }
 
     @Step("Клик неактивного поля <Пароль>")
-    public void click_inactive_input_password(){
+    public void clickInactiveInputPassword(){
         inactivePasswordInput.click();
     }
 
@@ -89,13 +89,13 @@ public class RegistrationPage {
     }
 
     @Step("Клик кнопки <Зарегистрироваться>")
-    public void click_register_button2(){
+    public void clickRegisterButton2(){
         registerButton2.click();
     }
 
     @Step("Клик кнопки <Войти>")
-    public void click_logIn_button_registration_page() {
-        logIn_button_registration_page.click();
+    public void clickLogInButtonRegistrationPage() {
+        logInButtonRegistrationPage.click();
     }
 
     @Step("Проверка появления ошибки <некорректный пароль>")

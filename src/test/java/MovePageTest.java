@@ -1,7 +1,7 @@
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
-import pageObject.LoginPage;
-import pageObject.MainPage;
+import pageobject.LoginPage;
+import pageobject.MainPage;
 import static com.codeborne.selenide.Selenide.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -13,7 +13,7 @@ public class MovePageTest {
     @Test
     public void move_to_sauce(){
         MainPage mainPage = open("https://stellarburgers.nomoreparties.site", MainPage.class);
-        mainPage.click_sauce_button();
+        mainPage.clickSauceButton();
         String textSauce = mainPage.getTextSauce();
         assertEquals(textSauce, "Соусы");
     }
@@ -22,7 +22,7 @@ public class MovePageTest {
     @Test
     public void move_to_filling(){
         MainPage mainPage = open("https://stellarburgers.nomoreparties.site", MainPage.class);
-        mainPage.click_filling_button();
+        mainPage.clickFillingButton();
         String textFilling = mainPage.getTextFilling();
         assertEquals(textFilling, "Начинки");
     }
@@ -31,8 +31,8 @@ public class MovePageTest {
     @Test
     public void move_to_bulki(){
         MainPage mainPage = open("https://stellarburgers.nomoreparties.site", MainPage.class);
-        mainPage.click_filling_button();
-        mainPage.click_bulki_button();
+        mainPage.clickFillingButton();
+        mainPage.clickBulkiButton();
         String textBulki = mainPage.getTextBulki();
         assertEquals(textBulki, "Булки");
     }
@@ -42,7 +42,7 @@ public class MovePageTest {
     public void move_to_personal_account(){
         open("https://stellarburgers.nomoreparties.site");
         MainPage mainPage = page(MainPage.class);
-        mainPage.click_personal_account_button();
+        mainPage.clickPersonalAccountButton();
         LoginPage loginPage = page(LoginPage.class);
         String textRegister = loginPage.getEntryText();
         assertEquals(textRegister, "Вход");
@@ -52,8 +52,8 @@ public class MovePageTest {
     @Test
     public void move_to_constructor() {
         MainPage mainPage = open("https://stellarburgers.nomoreparties.site", MainPage.class);
-        mainPage.click_personal_account_button();
-        mainPage.click_constructor_button();
+        mainPage.clickPersonalAccountButton();
+        mainPage.clickConstructorButton();
         String textRaiseBurger = mainPage.getTextRaiseBurger();
         assertThat(textRaiseBurger, is("Соберите бургер"));
     }
@@ -62,8 +62,8 @@ public class MovePageTest {
     @Test
     public void move_to_main_page() {
         MainPage mainPage = open("https://stellarburgers.nomoreparties.site", MainPage.class);
-        mainPage.click_personal_account_button();
-        mainPage.click_logo();
+        mainPage.clickPersonalAccountButton();
+        mainPage.clickLogo();
         String textRaiseBurger = mainPage.getTextRaiseBurger();
         assertThat(textRaiseBurger, is("Соберите бургер"));
     }

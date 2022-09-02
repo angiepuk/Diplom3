@@ -4,10 +4,10 @@ import io.restassured.http.ContentType;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import pageObject.AccountPage;
-import pageObject.LoginPage;
-import pageObject.MainPage;
-import pageObject.RegistrationPage;
+import pageobject.AccountPage;
+import pageobject.LoginPage;
+import pageobject.MainPage;
+import pageobject.RegistrationPage;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 import static io.restassured.RestAssured.given;
@@ -59,16 +59,16 @@ public class LogOutTest {
     public void logOut() {
         open("https://stellarburgers.nomoreparties.site");
         MainPage mainPage = page(MainPage.class);
-        mainPage.click_personal_account_button();
+        mainPage.clickPersonalAccountButton();
         LoginPage loginPage = page(LoginPage.class);
-        loginPage.click_inactive_input_email();
+        loginPage.clickInactiveInputEmail();
         loginPage.setEmail(email);
-        loginPage.click_inactive_input_password();
+        loginPage.clickInactiveInputPassword();
         loginPage.setPassword(password);
-        loginPage.click_logIn_button();
-        mainPage.click_personal_account_button();
+        loginPage.clickLogInButton();
+        mainPage.clickPersonalAccountButton();
         AccountPage accountPage = page(AccountPage.class);
-        accountPage.click_logOut_button();
+        accountPage.clickLogOutButton();
         String textRegister = loginPage.getEntryText();
         assertEquals(textRegister, "Вход");
     }

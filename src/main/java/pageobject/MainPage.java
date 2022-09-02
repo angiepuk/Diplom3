@@ -1,4 +1,4 @@
-package pageObject;
+package pageobject;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.*;
@@ -41,27 +41,27 @@ public class MainPage {
     private static SelenideElement placeOrderButton;
 
     @Step("Клик кнопки <Конструктор>")
-    public void click_constructor_button() {
+    public void clickConstructorButton() {
         constructorButton.click();
     }
 
     @Step("Клик кнопки <Личный Кабинет>")
-    public void click_personal_account_button() {
+    public void clickPersonalAccountButton() {
         personalAccountButton.click();
     }
 
     @Step("Клик кнопки <Войти в аккаунт>")
-    public void click_signIn_mainPage_button() {
+    public void clickSignInMainPageButton() {
         signInMainPageButton.click();
     }
 
     @Step("Клик лого <Stellar burgers>")
-    public void click_logo() {
+    public void clickLogo() {
         logoStellarBurger.click();
     }
 
     @Step("Клик кнопки <Булки>")
-    public void click_bulki_button() {
+    public void clickBulkiButton() {
         bulkiButton.click();
     }
 
@@ -71,7 +71,7 @@ public class MainPage {
     }
 
     @Step("Клик кнопки <Соусы>")
-    public void click_sauce_button() {
+    public void clickSauceButton() {
         sauceButton.click();
     }
 
@@ -81,7 +81,7 @@ public class MainPage {
     }
 
     @Step("Клик кнопки <Начинки>")
-    public void click_filling_button() {
+    public void clickFillingButton() {
         fillingButton.click();
     }
 

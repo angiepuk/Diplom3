@@ -4,10 +4,10 @@ import io.restassured.http.ContentType;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import pageObject.LoginPage;
-import pageObject.MainPage;
-import pageObject.RecoverPasswordPage;
-import pageObject.RegistrationPage;
+import pageobject.LoginPage;
+import pageobject.MainPage;
+import pageobject.RecoverPasswordPage;
+import pageobject.RegistrationPage;
 import static com.codeborne.selenide.Selenide.*;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
@@ -58,13 +58,13 @@ public class AuthorizationTest {
     public void authorization_with_signIn_button_on_main_page(){
         open("https://stellarburgers.nomoreparties.site");
         MainPage mainPage = page(MainPage.class);
-        mainPage.click_signIn_mainPage_button();
+        mainPage.clickSignInMainPageButton();
         LoginPage loginPage = page(LoginPage.class);
-        loginPage.click_inactive_input_email();
+        loginPage.clickInactiveInputEmail();
         loginPage.setEmail(email);
-        loginPage.click_inactive_input_password();
+        loginPage.clickInactiveInputPassword();
         loginPage.setPassword(password);
-        loginPage.click_logIn_button();
+        loginPage.clickLogInButton();
         String placeOrderText = mainPage.getTextPlaceOrder();
         assertEquals(placeOrderText, "Оформить заказ");
     }
@@ -74,13 +74,13 @@ public class AuthorizationTest {
     public void authorization_with_personal_account_button_on_main_page(){
         open("https://stellarburgers.nomoreparties.site");
         MainPage mainPage = page(MainPage.class);
-        mainPage.click_personal_account_button();
+        mainPage.clickPersonalAccountButton();
         LoginPage loginPage = page(LoginPage.class);
-        loginPage.click_inactive_input_email();
+        loginPage.clickInactiveInputEmail();
         loginPage.setEmail(email);
-        loginPage.click_inactive_input_password();
+        loginPage.clickInactiveInputPassword();
         loginPage.setPassword(password);
-        loginPage.click_logIn_button();
+        loginPage.clickLogInButton();
         String placeOrderText = mainPage.getTextPlaceOrder();
         assertEquals(placeOrderText, "Оформить заказ");
     }
@@ -90,16 +90,16 @@ public class AuthorizationTest {
     public void authorization_with_logIn_button_on_registration_page(){
         open("https://stellarburgers.nomoreparties.site");
         MainPage mainPage = page(MainPage.class);
-        mainPage.click_personal_account_button();
+        mainPage.clickPersonalAccountButton();
         LoginPage loginPage = page(LoginPage.class);
-        loginPage.click_register_button();
+        loginPage.clickRegisterButton();
         RegistrationPage registrationPage = page(RegistrationPage.class);
-        registrationPage.click_logIn_button_registration_page();
-        loginPage.click_inactive_input_email();
+        registrationPage.clickLogInButtonRegistrationPage();
+        loginPage.clickInactiveInputEmail();
         loginPage.setEmail(email);
-        loginPage.click_inactive_input_password();
+        loginPage.clickInactiveInputPassword();
         loginPage.setPassword(password);
-        loginPage.click_logIn_button();
+        loginPage.clickLogInButton();
         String placeOrderText = mainPage.getTextPlaceOrder();
         assertEquals(placeOrderText, "Оформить заказ");
     }
@@ -109,16 +109,16 @@ public class AuthorizationTest {
     public void authorization_with_logIn_button_on_recover_password_page(){
         open("https://stellarburgers.nomoreparties.site");
         MainPage mainPage = page(MainPage.class);
-        mainPage.click_personal_account_button();
+        mainPage.clickPersonalAccountButton();
         LoginPage loginPage = page(LoginPage.class);
-        loginPage.click_recover_password();
+        loginPage.clickRecoverPassword();
         RecoverPasswordPage recoverPasswordPage = page(RecoverPasswordPage.class);
-        recoverPasswordPage.click_logIn_button_recover_password_page();
-        loginPage.click_inactive_input_email();
+        recoverPasswordPage.clickLogInButtonRecoverPasswordPage();
+        loginPage.clickInactiveInputEmail();
         loginPage.setEmail(email);
-        loginPage.click_inactive_input_password();
+        loginPage.clickInactiveInputPassword();
         loginPage.setPassword(password);
-        loginPage.click_logIn_button();
+        loginPage.clickLogInButton();
         String placeOrderText = mainPage.getTextPlaceOrder();
         assertEquals(placeOrderText, "Оформить заказ");
     }

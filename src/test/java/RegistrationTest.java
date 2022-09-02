@@ -1,12 +1,11 @@
-import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.Before;
 import org.junit.Test;
-import pageObject.LoginPage;
-import pageObject.MainPage;
-import pageObject.RegistrationPage;
+import pageobject.LoginPage;
+import pageobject.MainPage;
+import pageobject.RegistrationPage;
 import static com.codeborne.selenide.Selenide.*;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
@@ -34,17 +33,17 @@ public class RegistrationTest {
     public void success_authorization() {
         open("https://stellarburgers.nomoreparties.site");
         MainPage mainPage = page(MainPage.class);
-        mainPage.click_personal_account_button();
+        mainPage.clickPersonalAccountButton();
         LoginPage loginPage = page(LoginPage.class);
-        loginPage.click_register_button();
+        loginPage.clickRegisterButton();
         RegistrationPage registrationPage = page(RegistrationPage.class);
-        registrationPage.click_inactive_input_name();
+        registrationPage.clickInactiveInputName();
         registrationPage.setName(name);
-        registrationPage.click_inactive_input_email();
+        registrationPage.clickInactiveInputEmail();
         registrationPage.setEmail(email);
-        registrationPage.click_inactive_input_password();
+        registrationPage.clickInactiveInputPassword();
         registrationPage.setPassword(password);
-        registrationPage.click_register_button2();
+        registrationPage.clickRegisterButton2();
         String textRegister = loginPage.getEntryText();
         assertEquals(textRegister, "Вход");
 
@@ -71,17 +70,17 @@ public class RegistrationTest {
         password = "FoUre";
         open("https://stellarburgers.nomoreparties.site");
         MainPage mainPage = page(MainPage.class);
-        mainPage.click_personal_account_button();
+        mainPage.clickPersonalAccountButton();
         LoginPage loginPage = page(LoginPage.class);
-        loginPage.click_register_button();
+        loginPage.clickRegisterButton();
         RegistrationPage registrationPage = page(RegistrationPage.class);
-        registrationPage.click_inactive_input_name();
+        registrationPage.clickInactiveInputName();
         registrationPage.setName(name);
-        registrationPage.click_inactive_input_email();
+        registrationPage.clickInactiveInputEmail();
         registrationPage.setEmail(email);
-        registrationPage.click_inactive_input_password();
+        registrationPage.clickInactiveInputPassword();
         registrationPage.setPassword(password);
-        registrationPage.click_register_button2();
+        registrationPage.clickRegisterButton2();
         String textIncorrectPassword = registrationPage.getTextIncorrectPassword();
         assertEquals(textIncorrectPassword, "Некорректный пароль");
     }
