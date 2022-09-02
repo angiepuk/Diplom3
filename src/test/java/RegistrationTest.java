@@ -11,10 +11,10 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 public class RegistrationTest {
-    String name;
-    String email;
-    String password;
-    String token;
+    public String name;
+    public String email;
+    public String password;
+    public String token;
 
     @Before
     public void setUp() {
@@ -22,7 +22,7 @@ public class RegistrationTest {
     }
 
     @Before
-    public void creation_user_creds(){
+    public void creationUserCreds(){
         name = RegistrationPage.creationName();
         email = RegistrationPage.creationEmail();
         password = RegistrationPage.creationPassword();
@@ -30,7 +30,7 @@ public class RegistrationTest {
 
     @DisplayName("Успешная регистрация")
     @Test
-    public void success_authorization() {
+    public void successAuthorization() {
         open("https://stellarburgers.nomoreparties.site");
         MainPage mainPage = page(MainPage.class);
         mainPage.clickPersonalAccountButton();
@@ -66,7 +66,7 @@ public class RegistrationTest {
     }
     @DisplayName("Регистрация с паролем в 5 знаков")
     @Test
-    public void authorization_with_incorrect_password(){
+    public void authorizationWithIncorrectPassword(){
         password = "FoUre";
         open("https://stellarburgers.nomoreparties.site");
         MainPage mainPage = page(MainPage.class);

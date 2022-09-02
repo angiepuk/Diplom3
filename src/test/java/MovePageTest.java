@@ -11,7 +11,7 @@ public class MovePageTest {
 
     @DisplayName("Переход на вкладку Соусы")
     @Test
-    public void move_to_sauce(){
+    public void moveToSauce(){
         MainPage mainPage = open("https://stellarburgers.nomoreparties.site", MainPage.class);
         mainPage.clickSauceButton();
         String textSauce = mainPage.getTextSauce();
@@ -20,7 +20,7 @@ public class MovePageTest {
 
     @DisplayName("Переход на вкладку Начинки")
     @Test
-    public void move_to_filling(){
+    public void movToFilling(){
         MainPage mainPage = open("https://stellarburgers.nomoreparties.site", MainPage.class);
         mainPage.clickFillingButton();
         String textFilling = mainPage.getTextFilling();
@@ -29,7 +29,7 @@ public class MovePageTest {
 
     @DisplayName("Переход на вкладку Булки")
     @Test
-    public void move_to_bulki(){
+    public void moveToBulki(){
         MainPage mainPage = open("https://stellarburgers.nomoreparties.site", MainPage.class);
         mainPage.clickFillingButton();
         mainPage.clickBulkiButton();
@@ -39,7 +39,7 @@ public class MovePageTest {
 
     @DisplayName("Переход на вкладку Личный Кабинет")
     @Test
-    public void move_to_personal_account(){
+    public void moveToPersonalAccount(){
         open("https://stellarburgers.nomoreparties.site");
         MainPage mainPage = page(MainPage.class);
         mainPage.clickPersonalAccountButton();
@@ -50,7 +50,7 @@ public class MovePageTest {
 
     @DisplayName("Переход на вкладку Конструктор")
     @Test
-    public void move_to_constructor() {
+    public void moveToConstructor() {
         MainPage mainPage = open("https://stellarburgers.nomoreparties.site", MainPage.class);
         mainPage.clickPersonalAccountButton();
         mainPage.clickConstructorButton();
@@ -60,7 +60,7 @@ public class MovePageTest {
 
     @DisplayName("Переход по лого на главную страницу")
     @Test
-    public void move_to_main_page() {
+    public void moveToMainPage() {
         MainPage mainPage = open("https://stellarburgers.nomoreparties.site", MainPage.class);
         mainPage.clickPersonalAccountButton();
         mainPage.clickLogo();

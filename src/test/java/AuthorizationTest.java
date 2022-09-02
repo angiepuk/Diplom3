@@ -13,10 +13,10 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 public class AuthorizationTest {
-    String name;
-    String email;
-    String password;
-    String token;
+    private String name;
+    private String email;
+    private String password;
+    private String token;
 
     @Before
     public void setUp() {
@@ -24,14 +24,14 @@ public class AuthorizationTest {
     }
 
     @Before
-    public void creation_user_creds(){
+    public void creationUserCreds(){
         name = RegistrationPage.creationName();
         email = RegistrationPage.creationEmail();
         password = RegistrationPage.creationPassword();
     }
 
     @Before
-    public void register_user() {
+    public void registerUser() {
         RegistrationPage creds = new RegistrationPage(email, password, name);
         token = given()
                 .contentType(ContentType.JSON)
@@ -44,7 +44,7 @@ public class AuthorizationTest {
     }
 
     @After
-    public void delete_user(){
+    public void deleteUser(){
         RegistrationPage creds = new RegistrationPage(email, password, name);
         given()
                 .header("authorization", token)
@@ -55,7 +55,7 @@ public class AuthorizationTest {
 
     @DisplayName("Авторизация по кнопке «Войти в аккаунт» на главной")
     @Test
-    public void authorization_with_signIn_button_on_main_page(){
+    public void authorizationWithSignInButtonOnMainPage(){
         open("https://stellarburgers.nomoreparties.site");
         MainPage mainPage = page(MainPage.class);
         mainPage.clickSignInMainPageButton();
@@ -71,7 +71,7 @@ public class AuthorizationTest {
 
     @DisplayName("Авторизация по кнопке «Личный кабинет» на главной")
     @Test
-    public void authorization_with_personal_account_button_on_main_page(){
+    public void authorizationWithPersonalAccountButtonOnMainPage(){
         open("https://stellarburgers.nomoreparties.site");
         MainPage mainPage = page(MainPage.class);
         mainPage.clickPersonalAccountButton();
@@ -87,7 +87,7 @@ public class AuthorizationTest {
 
     @DisplayName("Авторизация через кнопку в форме регистрации")
     @Test
-    public void authorization_with_logIn_button_on_registration_page(){
+    public void authorizationWithLogInButtonOnRegistrationPage(){
         open("https://stellarburgers.nomoreparties.site");
         MainPage mainPage = page(MainPage.class);
         mainPage.clickPersonalAccountButton();
@@ -106,7 +106,7 @@ public class AuthorizationTest {
 
     @DisplayName("Авторизация через кнопку в форме восстановления пароля")
     @Test
-    public void authorization_with_logIn_button_on_recover_password_page(){
+    public void authorizationWithLogInButtonOnRecoverPasswordPage(){
         open("https://stellarburgers.nomoreparties.site");
         MainPage mainPage = page(MainPage.class);
         mainPage.clickPersonalAccountButton();

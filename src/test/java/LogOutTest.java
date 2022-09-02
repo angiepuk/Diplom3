@@ -14,10 +14,10 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 public class LogOutTest {
-    String name;
-    String email;
-    String password;
-    String token;
+    public String name;
+    public String email;
+    public String password;
+    public String token;
 
     @Before
     public void setUp() {
@@ -25,14 +25,14 @@ public class LogOutTest {
     }
 
     @Before
-    public void creation_user_creds(){
+    public void creationUserCreds(){
         name = RegistrationPage.creationName();
         email = RegistrationPage.creationEmail();
         password = RegistrationPage.creationPassword();
     }
 
     @Before
-    public void register_user() {
+    public void registerUser() {
         RegistrationPage creds = new RegistrationPage(email, password, name);
         token = given()
                 .contentType(ContentType.JSON)
@@ -45,7 +45,7 @@ public class LogOutTest {
     }
 
     @After
-    public void delete_user(){
+    public void deleteUser(){
         RegistrationPage creds = new RegistrationPage(email, password, name);
         given()
                 .header("authorization", token)

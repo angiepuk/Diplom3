@@ -7,9 +7,9 @@ import org.openqa.selenium.support.How;
 
 public class RegistrationPage {
 
-    String name;
-    String email;
-    String password;
+    public String name;
+    public String email;
+    public String password;
 
     @FindBy(how = How.XPATH, using = "//label[@class='input__placeholder text noselect text_type_main-default'][text()='Имя']")
     private static SelenideElement inactiveNameInput;
